@@ -15,7 +15,7 @@ $artifactPath = Join-Path $env:Pipeline_Workspace $artifactName
 $rulesFilePath = Join-Path $artifactPath $RulesFile
 
 try {
-    Import-AzSentinelAlertRule -WorkspaceName $Workspace -SettingsFile $rulesFilePath
+    Import-AzSentinelAlertRule -WorkspaceName $Workspace -SettingsFile $RulesFile
 }
 catch {
     $ErrorMessage = $_.Exception.Message
