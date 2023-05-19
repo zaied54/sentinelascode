@@ -47,10 +47,14 @@ stages:
       variables: 
       - group: SentinelVariableGroup
       steps:
-      - download: current
-        artifact: RulesFile
-      - download: Scripts
-        patterns: '*.ps1'
+      - task: DownloadPipelineArtifact@2
+        inputs:
+          buildType: 'current'
+          targetPath: '$(Pipeline.Workspace)'
+      # - download: current
+      #   artifact: RulesFile
+      # - download: Scripts
+      #   patterns: '*.ps1'
       - task: AzurePowerShell@4
         displayName: 'Create and Update Alert Rules'
         inputs:
