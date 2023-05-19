@@ -15,7 +15,7 @@ $artifactPath = Join-Path $env:Pipeline_Workspace $artifactName
 $rulesFilePath = Join-Path $artifactPath $RulesFile
 
 try {
-    Import-AzSentinelAlertRule -WorkspaceName $Workspace -SettingsFile $RulesFile
+    Import-AzSentinelAlertRule -WorkspaceName $Workspace -SettingsFile /home/zaied/myagent/_work/3/RulesFile/s/AnalyticsRules/$RulesFile
 }
 catch {
     $ErrorMessage = $_.Exception.Message
