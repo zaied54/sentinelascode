@@ -60,6 +60,6 @@ stages:
         inputs:
          azureSubscription: 'AzureRMManualSPNSentinel'
          ScriptPath: '/home/zaied/myagent/_work/3/RulesFile/s/Scripts/CreateAnalyticsRules.ps1'
-         ScriptArguments: '-Workspace $(Workspace) -RulesFile /home/zaied/myagent/_work/3/RulesFile/s/AnalyticsRules/analytics-rules.json'
+         ScriptArguments: '-Workspace $(Workspace) -RulesFile analytics-rules.json'
          azurePowerShellVersion: LatestVersion
          pwsh: true
