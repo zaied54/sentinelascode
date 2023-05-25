@@ -56,9 +56,11 @@ stages:
       #  inputs:
       #    buildType: 'current'
       #    targetPath: '$(Pipeline.Workspace)'
-      - download: current
+      - download: none
         artifact: RulesFile
-      - download: Scripts
+        patterns: '*.json'
+      - download: none
+        artifact: Scripts
         patterns: '*.ps1'
       - task: AzurePowerShell@4
         displayName: 'Create and Update Alert Rules'
