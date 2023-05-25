@@ -1,6 +1,6 @@
-echo "inside!!!!"
 param( $Workspace, $RulesFile)
-
+echo $Workspace
+echo $RulesFile
 #Adding AzSentinel module
 Install-Module AzSentinel -Scope CurrentUser -Force -AllowClobber
 Import-Module AzSentinel
