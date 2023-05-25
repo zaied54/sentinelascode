@@ -12,8 +12,10 @@ Import-Module AzSentinel
 $artifactName = "RulesFile"
 
 #Build the full path for the analytics rule file
-$artifactPath = Join-Path $env:Pipeline_Workspace $artifactName 
-$rulesFilePath = Join-Path $artifactPath $RulesFile
+#$artifactPath = Join-Path $env:Pipeline_Workspace $artifactName 
+
+$rulesFilePath = /home/zaied/myagent/_work/3/s/AnalyticsRules/analytics-rules.json 
+# Join-Path $artifactPath $RulesFile
 
 try {
     Import-AzSentinelAlertRule -WorkspaceName $Workspace -SettingsFile $rulesFilePath
