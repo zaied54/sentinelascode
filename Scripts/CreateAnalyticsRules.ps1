@@ -1,4 +1,7 @@
-
+param(
+    [Parameter(Mandatory=$true)]$Workspace,
+    [Parameter(Mandatory=$true)]$RulesFile
+)
 #Adding AzSentinel module
 Install-Module AzSentinel -Scope CurrentUser -Force -AllowClobber
 Import-Module AzSentinel
@@ -13,7 +16,7 @@ $rulesFilePath = "/home/zaied/myagent/_work/3/s/AnalyticsRules/analytics-rules.j
 # Join-Path $artifactPath $RulesFile
 
 try {
-    Import-AzSentinelAlertRule -WorkspaceName testSentinel -SettingsFile $rulesFilePath
+    Import-AzSentinelAlertRule -WorkspaceName $Workspace -SettingsFile $rulesFilePath
 }
 catch {
     $ErrorMessage = $_.Exception.Message
