@@ -67,12 +67,19 @@ stages:
         
       
 
+      # - task: AzurePowerShell@5
+      #   inputs:
+      #     azureSubscription: 'AzureRMManualSPNSentinel'
+      #     ScriptType: 'FilePath'
+      #     ScriptPath: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
+      #     ScriptArguments: '-Workspace:testSentinel -RulesFile:analytics-rules.json'
+      #     azurePowerShellVersion: 'LatestVersion'
+      #     pwsh: true
       - task: AzurePowerShell@5
         inputs:
           azureSubscription: 'AzureRMManualSPNSentinel'
-          ScriptType: 'FilePath'
-          ScriptPath: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
-          ScriptArguments: '-Workspace:testSentinel -RulesFile:analytics-rules.json'
+          ScriptType: 'InlineScript'
+          Inline: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1 -Workspace:testSentinel -RulesFile:analytics-rules.json'
           azurePowerShellVersion: 'LatestVersion'
           pwsh: true
          
