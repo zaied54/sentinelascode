@@ -79,7 +79,7 @@ stages:
         inputs:
           azureSubscription: 'AzureRMManualSPNSentinel'
           ScriptType: 'InlineScript'
-          Inline: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
+          Inline: '$(Pipeline.Workspace)/s/Scripts/CreateAnalyticsRules.ps1'
           azurePowerShellVersion: 'LatestVersion'
           pwsh: true
          
