@@ -52,10 +52,10 @@ stages:
       variables: 
       - group: SentinelVariableGroup
       steps:
-      - task: DownloadPipelineArtifact@2
-        inputs:
-          buildType: 'current'
-          targetPath: '$(Pipeline.Workspace)'
+      #- task: DownloadPipelineArtifact@2
+      #  inputs:
+      #    buildType: 'current'
+      #    targetPath: '$(Pipeline.Workspace)'
       - download: current
         artifact: RulesFile
       - download: Scripts
