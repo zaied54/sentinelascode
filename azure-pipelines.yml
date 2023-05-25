@@ -63,13 +63,16 @@ stages:
       - download: none
         artifact: Scripts
         patterns: '*.ps1'
+
+        
+      
+
       - task: AzurePowerShell@5
-        displayName: 'Create and Update Alert Rules'
         inputs:
-         azureSubscription: 'AzureRMManualSPNSentinel'
-         ScriptPath: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
-         ScriptArguments: 
-         -Arg1 val1 `
-         -Arg2 val2
-         azurePowerShellVersion: LatestVersion
-         pwsh: true
+          azureSubscription: 'AzureRMManualSPNSentinel'
+          ScriptType: 'FilePath'
+          ScriptPath: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
+          ScriptArguments: '-Workspace testSentinel -RulesFile analytics-rules.json'
+          azurePowerShellVersion: 'LatestVersion'
+          pwsh: true
+         
