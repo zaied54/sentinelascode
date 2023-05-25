@@ -2,7 +2,7 @@ param(
     [Parameter(Mandatory=$true)]$Workspace,
     [Parameter(Mandatory=$true)]$RulesFile
 )
-
+echo "inside!!!!"
 #Adding AzSentinel module
 Install-Module AzSentinel -Scope CurrentUser -Force -AllowClobber
 Import-Module AzSentinel
