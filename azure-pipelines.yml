@@ -40,7 +40,7 @@ stages:
        - task: PublishPipelineArtifact@1
          displayName: 'Publish Artifact: RulesFile'
          inputs:
-          targetPath: RulesFile
+          targetPath: AnalyticsRules
           artifact: RulesFile
           
 
