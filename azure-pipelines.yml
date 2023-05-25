@@ -63,7 +63,7 @@ stages:
       - download: none
         artifact: Scripts
         patterns: '*.ps1'
-      - task: AzurePowerShell@4
+      - task: AzurePowerShell@5
         displayName: 'Create and Update Alert Rules'
         inputs:
          azureSubscription: 'AzureRMManualSPNSentinel'
