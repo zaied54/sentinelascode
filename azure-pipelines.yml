@@ -37,11 +37,12 @@ stages:
          inputs:
           targetPath: Scripts
           artifact: Scripts
-       - task: PublishBuildArtifacts@1
+       - task: PublishPipelineArtifact@1
          displayName: 'Publish Artifact: RulesFile'
          inputs:
-          PathtoPublish: '$(Pipeline.Workspace)'
-          ArtifactName: RulesFile
+          targetPath: RulesFile
+          artifact: RulesFile
+          
 
 - stage: deploy_alert_rules
   jobs:
@@ -66,7 +67,7 @@ stages:
         displayName: 'Create and Update Alert Rules'
         inputs:
          azureSubscription: 'AzureRMManualSPNSentinel'
-         ScriptPath: '$(Pipeline.Workspace)\Scripts\CreateAnalyticsRules.ps1'
-         ScriptArguments: '-Workspace $(Workspace) -RulesFile analytics-rules.json'
+         ScriptPath: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
+         ScriptArguments: '-Workspace testSentinel -RulesFile analytics-rules.json'
          azurePowerShellVersion: LatestVersion
          pwsh: true
