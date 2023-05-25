@@ -64,7 +64,7 @@ stages:
         displayName: 'Create and Update Alert Rules'
         inputs:
          azureSubscription: 'AzureRMManualSPNSentinel'
-         ScriptPath: '$(Pipeline.Workspace)\Scripts\CreateAnalyticsRules.ps1'
+         ScriptPath: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
          ScriptArguments: '-Workspace $(Workspace) -RulesFile analytics-rules.json'
          azurePowerShellVersion: LatestVersion
          pwsh: true
