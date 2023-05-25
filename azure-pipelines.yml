@@ -72,7 +72,7 @@ stages:
           azureSubscription: 'AzureRMManualSPNSentinel'
           ScriptType: 'FilePath'
           ScriptPath: '$(Pipeline.Workspace)/Scripts/CreateAnalyticsRules.ps1'
-          ScriptArguments: '-Workspace testSentinel -RulesFile analytics-rules.json'
+          ScriptArguments: '-Workspace:testSentinel -RulesFile:analytics-rules.json'
           azurePowerShellVersion: 'LatestVersion'
           pwsh: true
          
