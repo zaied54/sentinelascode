@@ -74,6 +74,6 @@ stages:
           ScriptPath: '$(Pipeline.Workspace)/s/Scripts/CreateAnalyticsRules.ps1'
           ScriptArguments: '-Workspace:testSentinel -RulesFile:analytics-rules.json'
           azurePowerShellVersion: 'LatestVersion'
-          pwsh: true
+          #pwsh: true // not working with my personal laptop
       
          
