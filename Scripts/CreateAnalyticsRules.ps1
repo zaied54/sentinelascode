@@ -22,3 +22,5 @@ catch {
     $ErrorMessage = $_.Exception.Message
     Write-Error "Rule import failed with message: $ErrorMessage" 
 }
+
+Write-Host "Rules Deployed"
