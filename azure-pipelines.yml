@@ -71,7 +71,7 @@ stages:
               az login --service-principal -u e1de9cdc-6c41-4cfc-bec1-bc98a54a3da2 -p Euw8Q~rnZtF6OU4AwdUUW.lmGbf4kPlJtffTqajf --tenant ad93a64d-ad0d-4ecd-b2fd-e53ce15965be
               Start-Process PowerShell -ArgumentList " "-file$(Pipeline.Workspace)/s/Scripts/CreateAnalyticsRules.ps1
                "
-          pwsh: true
+          #pwsh: true
       
 
       # - task: AzurePowerShell@5
